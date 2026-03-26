@@ -1,0 +1,180 @@
+:root {
+  --color-bg: black;
+  --color-fg: white;
+  --color-accent: #c9a86a;
+  --color-accent-soft: rgba(201, 168, 106, 0.3);
+  --color-card: #323232;
+  --nav-border: white;
+  --box-color: rgba(0, 0, 0, 0.5);
+
+  --small-space: 10px;
+  --mid-space: 16px;
+  --more-space: 40px;
+  --large-space: 60px;
+}
+
+:root[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --color-card: #eeeeee;
+  --color-accent-soft: rgba(201, 168, 106, 0.15);
+  --nav-border: rgb(0, 0, 0);
+}
+
+body {
+  margin: 0;
+  font-family: serif;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  transition: 0.5s;
+}
+
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 2px solid var(--nav-border);
+}
+
+.nav h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.nav nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav nav a {
+  color: var(--color-fg);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav nav a:hover {
+  color: var(--color-accent);
+}
+
+.nav button {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav button:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: var(--space-md);
+}
+
+.hero p {
+  margin: 6px 0;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 28px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* GRID FOR CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: var(--space-lg);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CARDS */
+.card {
+  background: var(--color-card);
+  padding: 40px;
+  text-align: center;
+  border: 1px solid var(--color-accent-soft);
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  cursor: default;
+  color: var(--color-fg);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 25px var(--color-accent-soft);
+}
+
+/* ANIMATIONS FOR FADE-IN */
+.fade {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.delay1 {
+  animation-delay: 0.3s;
+}
+
+.delay2 {
+  animation-delay: 0.6s;
+}
+
+.delay3 {
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY projects :</title>
+    <link rel="stylesheet" href="../CSS/projects.css">
+    <script defer src="../JS/projects.js"></script>
+</head>
+
+<body>
+
+    <header class="nav">
+        <h1>Rushil's Website :</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
+                Toggle Theme
+            </button>
+        </nav>
+    </header>
+
+    <section class="heading">
+        <p>My Projects :-</p>
+        <hr>
+    </section>
+
+    <section class="project-container">
+
+        <button class="project-btn" onclick="openModal(1)">
+            <h3>Tic-Tac-Toe</h3>
+        </button>
+        <button class="project-btn" onclick="openModal(2)">
+            <h3>Simple-Game</h3>
+        </button>
+        <button class="project-btn" onclick="openModal(3)">
+            <h3>Memory-Game</h3>
+        </button>
+        <button class="project-btn" onclick="openModal(7)">
+            <h3>Bank-management-system</h3>
+        </button>
+        <button class="project-btn" onclick="openModal(6)">
+            <h3>Login-system</h3>
+        </button>
+        <button class="project-btn" onclick="openModal(4)">
+            <h3>Twixt-Game</h3>
+        </button>
+        <button class="project-btn" onclick="openModal(5)">
+            <h3>Food-Hub</h3>
+        </button>
+
+    </section>
+
+    <section class="modal-overlay" id="modal-1">
+        <div class="modal-box"><button onclick="closeModal(1)">X</button>
+            <h3>WHAT IT IS:</h3>
+            <p>This is a single player and a multiplayer Tic-Tac-Toe game which is built on the minimax algorithm
+                implimented in javascript, html and css. You can tap on the box of your choice and your respective
+                symbol will get placed. Your goal is to make a sequence of 3 either diagonal or in a line.</p>
+            <h3>WHY I BUILT IT:</h3>
+            <p>I had found an interesting video on the minimax algorithm. This video explained how the best possible
+                move could be played in a partially filled grid. I wanted to try to impliment it so I made it.</p>
+            <h3>WHAT I WOULD CHANGE:</h3>
+            <p>If i would have made it now, I would have upgraded the css to make it look better. Now it is just a white
+                Tic-Tac-Toe. I would also have added dificulty levels by having some random probability of the algorithm
+                to pick a random unused box.</p><a href="https://github.com/Rushil-Sharma/TicTacToe"
+                target="_blank">View on GitHub</a><a href="https://rushil-sharma.github.io/TicTacToe/">Play it here.</a>
+        </div>
+    </section>
+
+    <section class="modal-overlay" id="modal-2">
+        <div class="modal-box"><button onclick="closeModal(2)">X</button>
+            <h3>WHAT IT IS:</h3>
+            <p>This is a single player game in which you are a spaceship and there are astroids that you have to dodge.
+                This game is made by tkinter and pygame which are libraries in python. You will get a score at the end.
+                The dificulty/ speed of astroids keep on increasing so good luck.</p>
+            <h3>WHY I BUILT IT:</h3>
+            <p>I always wanted to make a game in that would be fun and addicting to play. So i looked at a youtube video
+                on pygame and made this.</p>
+            <h3>WHAT I WOULD CHANGE:</h3>
+            <p>I would have added better graphics. Right now it is just a block. I would also want to add a button from
+                which i can fire the astroids, Astroids that need to be fired twice to blast. Also astroids which are
+                bigger and slower. Might also want to add a shild that i can collect and use at a time i need.</p><a
+                href="https://github.com/Rushil-Sharma/simple-game" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section class="modal-overlay" id="modal-3">
+        <div class="modal-box"><button onclick="closeModal(3)">X</button>
+            <h3>WHAT IT IS:</h3>
+            <p>This is a card based memory game which gives you 16 cards with each one having only one pair. Your task
+                is to find all pairs of cards before your moves run out.</p>
+            <h3>WHY I BUILT IT:</h3>
+            <p>I had built this as I was playing this online memory game and wordle. I also wanted to learn a little bit
+                about HTML, JS and CSS.</p>
+            <h3>WHAT I WOULD CHANGE:</h3>
+            <p>I would make more modes to this game and make levels and based of off how hard the level is the moves get
+                lesser. It could also have an option for a 6x6 memory game. Similar to what I would have done in
+                TicTacToe.</p><a href="https://github.com/Rushil-Sharma/Memory-Game" target="_blank">View on
+                GitHub</a><a href="https://rushil-sharma.github.io/Memory-Game/">Play it here.</a>
+        </div>
+    </section>
+
+    <section class="modal-overlay" id="modal-4">
+        <div class="modal-box"><button onclick="closeModal(4)">X</button>
+            <h3>WHAT IT IS:</h3>
+            <p>This is a game that is played by placing your pawns(letters) in such a way that you make a path
+                (up->down/left->right). A connection is made by placing 2 same pawns on a dist of 2x3.</p>
+            <h3>WHY I BUILT IT:</h3>
+            <p>I had made this for my C-programming course in IIIT HYD. This was one of the assignments that was given
+                to us.</p>
+            <h3>WHAT I WOULD CHANGE:</h3>
+            <p>I would have made the connections look better not simply a smaller character. I also missed out on using
+                linked lists as it was not taught earlier. I would also add a better CLI interface.</p><a
+                href="https://github.com/Rushil-Sharma/Twixt-Game" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section class="modal-overlay" id="modal-5">
+        <div class="modal-box"><button onclick="closeModal(5)">X</button>
+            <h3>WHAT IT IS:</h3>
+            <p>It is a simple online ordering website's frontend part. You can choose items from the menu and place your
+                order. You will be then redirected to your bill. Looks are stolen from a very similar website.</p>
+            <h3>WHY I BUILT IT:</h3>
+            <p>This website was made just as an experiment. I used chatgpt and vibecoded this. The website was coded in
+                Html , javascript and css.</p>
+            <h3>WHAT I WOULD CHANGE:</h3>
+            <p>I had made a lot of mistakes while making this. There is only a singular index.html file which is a very
+                long code. Unreadable and messy. It also is not proper. Images are not consistent and it is very wierd.
+            </p><a href="https://github.com/Rushil-Sharma/foodhub" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section class="modal-overlay" id="modal-6">
+        <div class="modal-box"><button onclick="closeModal(6)">X</button>
+            <h3>WHAT IT IS:</h3>
+            <p>It is a small window which serves as a login for an application. You enter your username and password and
+                register/ sign up. Or if you have an already made account you can log in as well.</p>
+            <h3>WHY I BUILT IT:</h3>
+            <p>This is made via the tkinter module in python. This was one of my assignments that my sir had given to
+                me. This taught me a lot about lists and fuctions as well as tkinter also.</p>
+            <h3>WHAT I WOULD CHANGE:</h3>
+            <p>I had made a lot of mistakes while making this. The window is also very messy. If i could make changes, I
+                would have made it cleaner and modify my code also a bit.</p><a
+                href="https://github.com/Rushil-Sharma/login_system" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section class="modal-overlay" id="modal-7">
+        <div class="modal-box"><button onclick="closeModal(7)">X</button>
+            <h3>WHAT IT IS:</h3>
+            <p>It is a simple bank-management-system which has a dictionary of few accounts. You can log into accounts
+                and transfer money from one account to another. You can also withdraw, deposit and change passwords for
+                your accounts.</p>
+            <h3>WHY I BUILT IT:</h3>
+            <p>This was a homework given to us by our sir. This was to teach us about the basics of dictionary in python
+                and about functions in python.</p>
+            <h3>WHAT I WOULD CHANGE:</h3>
+            <p>If i were to modify this I would make it using classes so that the user can make new accounts on the fly
+                and delete them. Using classes would also make it much more easier as the code would look cleaner.</p><a
+                href="https://github.com/Rushil-Sharma/bank-management-system" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+</body>
+
+</html>

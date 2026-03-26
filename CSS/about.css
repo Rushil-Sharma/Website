@@ -1,0 +1,145 @@
+:root {
+  --color-bg: #0a0a0a;
+  --color-fg: #ffffff;
+  --color-accent: #6ab1c9;
+  --color-accent-soft: rgba(131, 106, 201, 0.3);
+  --color-card: #111111;
+
+  --space-sm: 10px;
+  --space-md: 16px;
+  --space-lg: 40px;
+  --space-xl: 60px;
+}
+
+.light {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --color-card: #eeeeee;
+  --color-accent-soft: rgba(201, 168, 106, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: serif;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  transition: 0.5s;
+}
+
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 2px solid var(--color-fg);
+}
+
+.nav h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.nav nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav nav a {
+  color: var(--color-fg);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav nav a:hover {
+  color: var(--color-accent);
+}
+
+.nav button {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav button:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+/* PROFILE */
+.profile {
+  text-align: center;
+  margin: 40px;
+}
+
+.profile img {
+  width: 220px;
+  border-radius: 50%;
+}
+
+/* TEXT */
+.text {
+  padding-top: 20px;
+  font-size: large;
+}
+
+/* TIMELINE */
+.timeline {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+}
+
+.item {
+  background: var(--color-card);
+  margin: 20px 0;
+  padding: 20px;
+  cursor: pointer;
+  border: 1px solid var(--color-accent-soft);
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.item .content {
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.5s ease;
+}
+
+.item.active {
+  background: var(--color-accent-soft);
+}
+
+.item.active .content {
+  opacity: 1;
+  max-height: 500px;
+  margin-top: 10px;
+}
+
+.item h2 {
+  margin: 0;
+  color: var(--color-accent);
+}
+
+.item hr {
+  border: 1px solid var(--color-accent);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.CONTENTO_MAINO {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
