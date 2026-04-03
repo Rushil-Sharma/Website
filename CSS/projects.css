@@ -217,7 +217,7 @@ body::-webkit-scrollbar {
 
 .project-container {
     display: grid;
-    grid-template-columns: repeat(3, 320px);
+    grid-template-columns: repeat(3, 350px);
     justify-content: center;
     row-gap: 40px;
     /* vertical only */
@@ -227,7 +227,8 @@ body::-webkit-scrollbar {
 }
 
 .project-btn {
-    width: 320px;
+    padding: 10px;
+    width: 300px;
     height: 150px;
     background-color: var(--content-button);
     font-size: var(--large-font);
@@ -238,7 +239,8 @@ body::-webkit-scrollbar {
 }
 
 .project-btn:hover {
-    width: 320px;
+    padding: 10px;
+    width: 300px;
     height: 150px;
     background-color: var(--content-button-hover);
     font-size: var(--large-font);

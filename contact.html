@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="CSS/index.css">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="CSS/contact.css">
 </head>
 
 <body>
@@ -27,23 +27,24 @@
 
     </header>
 
-    <main>
-        <div class="heading">
-            <p>Home :-</p>
-            <hr>
+    <div class="heading">
+        <p>Contact Me:-</p>
+        <hr>
+    </div>
+
+    <div class="container" role="form" aria-labelledby="contact-heading">
+        <div class="main_content">
+            <p id="contact-heading">Name:</p>
+            <input id="name" placeholder="Enter your name" aria-label="Enter your name">
+            <p>Email:</p>
+            <input id="email" placeholder="Enter your email" aria-label="Enter your email">
+            <p>Message:</p>
+            <textarea id="message" rows="4" cols="50" aria-label="Enter your message"></textarea>
         </div>
+        <button id="submit" onclick="submit()">Submit</button>
+    </div>
 
-        <div class="hero">
-            <h1>Welcome to my Website</h1>
-            <h2>I am Rushil Sharma</h2>
-            <h3>Btech in CS and Ms in Computational liguistics</h3>
-            <h4>IIIT HYDERABAD</h4>
-            <button onclick="goToAbout()" id="aboutMe" aria-label="Go to About Me section">About me</button>
-        </div>
-    </main>
-
-
-    <script src="JS/index.js"></script>
+    <p id="status" aria-live="polite">Submit the message . . . </p>
 
     <footer>
         <a href="https://www.linkedin.com/in/rushil-sharma-b3107a361/">LinkedIN</a>
@@ -52,6 +53,7 @@
         <a onclick="copy('Gmail')" role="button">Gmail</a>
     </footer>
 
+    <script src="JS/contact.js"></script>
 </body>
 
 </html>

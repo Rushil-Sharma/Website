@@ -174,7 +174,6 @@ input:checked+.slider::before {
 }
 
 body {
-    transition: background 0.5s ease, color 0.5s ease;
     background-image: var(--background);
     margin: 0;
 }
@@ -216,7 +215,7 @@ body {
     animation-fill-mode: both;
 }
 
-.hero h5 {
+.hero h3 {
     display: flex;
     justify-content: center;
     margin: 8px;
@@ -224,7 +223,7 @@ body {
     animation-fill-mode: both;
 }
 
-.hero h6 {
+.hero h4 {
     display: flex;
     justify-content: center;
     margin: 8px;
@@ -238,7 +237,7 @@ body {
     animation: fade-in 1s ease-out 1s;
     animation-fill-mode: both;
     width: fit-content;
-    margin-left: 170px;
+    margin-left: 200px;
     border-radius: 5px;
     background-color: var(--nav-bg-colour);
     color: var(--white);
