@@ -1,36 +1,64 @@
-document.getElementById("form").addEventListener("submit", function (e) {
-    e.preventDefault();
+function goToHome() {
+    window.location.href = "home.html";
+}
 
+function goToAbout() {
+    window.location.href = "about.html";
+}
+
+function goToProjects() {
+    window.location.href = "projects.html";
+}
+
+function goToContact() {
+    window.location.href = "contact.html";
+}
+
+function submit() {
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
-    let msg = document.getElementById("msg").value.trim();
+    let message = document.getElementById("message").value.trim();
 
-    if (!name || !email || !msg) {
-        window.alert("INVALID, please fill all fields !");
+    if (name === "" || email === "" || message === "") {
+        document.getElementById('status').innerHTML = 'FILL ALL THE FORMS ';
         return;
     }
 
-    window.alert("Sent . . .");
-    document.getElementById("form").reset();
-});
+    if (!email.includes('@')) {
+        document.getElementById('status').innerHTML = 'INVALID EMAIL ( should contain @ )';
+        return;
+    }
 
-function toggleTheme() {
-    const html = document.documentElement;
-    if (html.classList.contains("light")) {
-        html.classList.remove("light");
-        localStorage.setItem("theme", "dark");
-    } else {
-        html.classList.add("light");
-        localStorage.setItem("theme", "light");
+    document.getElementById('status').innerText = 'SUBMITTED !';
+    document.getElementById('status').style.color = 'green';
+}
+
+function copy(mail) {
+    if (mail == 'Outlook') {
+        navigator.clipboard.writeText('rushil.sharma@research.iiit.ac.in');
+        alert("Copied the Outlook mail id");
+    }
+    else {
+        navigator.clipboard.writeText('itzrushilsharma@gmail.com');
+        alert("Copied the Google mail id");
     }
 }
-window.toggleTheme = toggleTheme;
 
-window.addEventListener("DOMContentLoaded", () => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "light") {
-        document.documentElement.classList.add("light");
+const toggle = document.getElementById("themeToggle");
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+    toggle.checked = true;
+}
+
+toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
     } else {
-        document.documentElement.classList.remove("light");
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "dark");
     }
 });

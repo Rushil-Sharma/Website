@@ -1,33 +1,67 @@
-document.querySelectorAll(".item").forEach(item => {
-    item.addEventListener("click", () => {
-        item.classList.toggle("active");
-        const expanded = item.classList.contains("active");
-        item.setAttribute("aria-expanded", expanded);
-    });
-});
+function goToHome() {
+    window.location.href = "home.html";
+}
 
+function goToAbout() {
+    window.location.href = "about.html";
+}
 
-function toggleTheme() {
-    const html = document.documentElement;
-    if (html.classList.contains("light")) {
-        html.classList.remove("light");
-        localStorage.setItem("theme", "dark");
-    } else {
-        html.classList.add("light");
-        localStorage.setItem("theme", "light");
+function goToProjects() {
+    window.location.href = "projects.html";
+}
+
+function goToContact() {
+    window.location.href = "contact.html";
+}
+
+function copy(mail) {
+    if (mail == 'Outlook') {
+        navigator.clipboard.writeText('rushil.sharma@research.iiit.ac.in');
+        alert("Copied the Outlook mail id");
+    }
+    else {
+        navigator.clipboard.writeText('itzrushilsharma@gmail.com');
+        alert("Copied the Google mail id");
     }
 }
-window.toggleTheme = toggleTheme;
 
-window.addEventListener("DOMContentLoaded", () => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "light") {
-        document.documentElement.classList.add("light");
+const toggle = document.getElementById("themeToggle");
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+    toggle.checked = true;
+}
+
+toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
     } else {
-        document.documentElement.classList.remove("light");
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "dark");
     }
+});
 
-    document.querySelectorAll(".item").forEach(item => {
-        item.setAttribute("aria-expanded", item.classList.contains("active"));
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
     });
+}, {
+    threshold: 0
+});
+
+document.querySelectorAll(".content").forEach((el, index) => {
+    observer.observe(el);
+});
+
+const timeline = document.getElementById("timeline");
+
+timeline.addEventListener("click", (e) => {
+    const item = e.target.closest(".item");
+    if (!item) return;
+
+    const isOpen = item.classList.toggle("active");
+    item.setAttribute("aria-expanded", isOpen);
 });

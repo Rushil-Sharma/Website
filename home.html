@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/CSS/home.css">
+</head>
+
+<body>
+    <header>
+
+        <nav class="nav-bar">
+
+            <div class="Rushils">Rushil's</div>
+            <div class="website">website</div>
+
+            <button class="nav-btn" onclick="goToHome()">Home</button>
+            <button class="nav-btn" onclick="goToAbout()">About</button>
+            <button class="nav-btn" onclick="goToProjects()">Projects</button>
+            <button class="nav-btn" onclick="goToContact()">Contact</button>
+            <label class="theme-toggle">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="heading">
+            <p>Home :-</p>
+            <hr>
+        </section>
+
+        <section class="hero">
+            <h1>Welcome to my Website</h1>
+            <h2>I am Rushil Sharma</h2>
+            <h5>Btech in CS and Ms in Computational liguistics</h3>
+            <h6>IIIT HYDERABAD</h4>
+            <button onclick="goToAbout()" id="aboutMe">About me</button>
+        </section>
+    </main>
+
+
+    <script src="/JS/home.js"></script>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/rushil-sharma-b3107a361/">LinkedIN</a>
+        <a href="https://github.com/Rushil-Sharma">Github</a>
+        <a onclick="copy('Outlook')">Outlook</a>
+        <a onclick="copy('Gmail')">Gmail</a>
+    </footer>
+
+</body>
+
+</html>

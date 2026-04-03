@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="/CSS/contact.css">
+</head>
+
+<body>
+    <header>
+
+        <nav class="nav-bar">
+
+            <div class="Rushils">Rushil's</div>
+            <div class="website">website</div>
+
+            <button class="nav-btn" onclick="goToHome()">Home</button>
+            <button class="nav-btn" onclick="goToAbout()">About</button>
+            <button class="nav-btn" onclick="goToProjects()">Projects</button>
+            <button class="nav-btn" onclick="goToContact()">Contact</button>
+            <label class="theme-toggle">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+        </nav>
+
+    </header>
+
+    <section class="heading">
+        <p>Contact Me:-</p>
+        <hr>
+    </section>
+
+    <section class="container">
+        <section class="main_content">
+            <p>Name:</p>
+            <input id="name" placeholder="Enter your name">
+            <p>Email:</p>
+            <input id="email" placeholder="Enter your email">
+            <p>Message:</p>
+            <textarea id="message" rows="4" cols="50"></textarea>
+        </section>
+        <button id="submit" onclick="submit()">Submit</button>
+    </section>
+
+    <p id="status">Submit the message . . . </p>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/rushil-sharma-b3107a361/">LinkedIN</a>
+        <a href="https://github.com/Rushil-Sharma">Github</a>
+        <a onclick="copy('Outlook')">Outlook</a>
+        <a onclick="copy('Gmail')">Gmail</a>
+    </footer>
+
+    <script src="/JS/contact.js"></script>
+</body>
+
+</html>

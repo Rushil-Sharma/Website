@@ -1,166 +1,275 @@
 :root {
-  --color-bg: black;
-  --color-fg: white;
-  --color-accent: #6ac96d;
-  --color-accent-soft: rgba(109, 201, 106, 0.3);
-  --color-card: #323232;
-  --nav-border: white;
-  --box-color: rgba(0, 0, 0, 0.5);
-
-  --small-space: 10px;
-  --mid-space: 16px;
-  --more-space: 40px;
-  --large-space: 60px;
+    /*colours v*/
+    --nav-bg-colour: #0f172a;
+    --colourless-borders: rgba(255, 255, 255, 0.08);
+    --white: #e5e7eb;
+    --black: #020617;
+    --nav-btn-hover: #1e293b;
+    --nav-btn-hover-border: #3b82f6;
+    --name-color: #1e293b;
+    --hover: #9ca3af;
+    /*sizes   v*/
+    --border-size: 1px;
+    --small-font: 16px;
+    --padding: 20px;
+    --large-font: 20px;
+    --main_thing_size: 67px;
+    /*Fonts  v*/
+    --font-body: 'Gill Sans', sans-serif;
+    --font-display: 'Courier New', monospace;
+    --main_thing_font: system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
+    /*bg-gradient v*/
+    --bg-g1: #020617;
+    --bg-g2: #020617;
+    --bg-g3: #0f172a;
+    --bg-g4: #020617;
+    /*linear gradients v*/
+    --h3: linear-gradient(45deg, #3b82f6, #020617);
+    --rushil: linear-gradient(45deg, #3b82f6, #06b6d4);
+    --website: linear-gradient(45deg, #22c55e, #4ade80);
+    --background: linear-gradient(to right,
+            var(--bg-g1), var(--bg-g2), var(--bg-g3), var(--bg-g4),
+            var(--bg-g2), var(--bg-g3), var(--bg-g2), var(--bg-g1));
 }
 
-.light {
-  --color-bg: #ffffff;
-  --color-fg: #000000;
-  --color-card: #eeeeee;
-  --color-accent-soft: rgb(128, 201, 106);
-  --color-accent: #6ac97a;
-  --color-accent-soft: rgb(106, 201, 109);
-  --nav-border: rgb(0, 0, 0);
+:root[data-theme="light"]{
+    /*colours v*/
+    --nav-bg-colour: #d5e4ff;
+    --colourless-borders: rgba(0, 0, 0, 0.08);
+    --white: #111827;
+    --black: #ffffff;
+    --nav-btn-hover: #f3f4f6;
+    --nav-btn-hover-border: #2563eb;
+    --content-box: #f9fafb;
+    --vertical-bar: #2563eb;
+    --name-color: #e5e7eb;
+    --hover: #6b7280;
+    /*bg-gradient v*/
+    --bg-g1: #ffffff;
+    --bg-g2: #f9fafb;
+    --bg-g3: #ffffff;
+    --bg-g4: #f3f4f6;
+    /*linear gradients v*/
+    --h3: linear-gradient(45deg, #2563eb, #000000);
+    --rushil: linear-gradient(45deg, #2563eb, #06b6d4);
+    --website: linear-gradient(45deg, #16a34a, #4ade80);
+    --background: linear-gradient(to right,
+            var(--bg-g1), var(--bg-g3), var(--bg-g3), var(--bg-g4),
+            var(--bg-g2), var(--bg-g4), var(--bg-g2), var(--bg-g1));
+}
+
+.nav-bar {
+    border-bottom: var(--border-size) solid var(--white);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--nav-bg-colour);
+}
+
+.Rushils {
+    font-family: var(--font-display);
+    font-size: 22px;
+    margin-right: 5px;
+    font-weight: bold;
+    background: var(--rushil);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.website {
+    font-family: var(--font-display);
+    font-size: 22px;
+    margin-right: auto;
+    font-weight: bold;
+    background: var(--website);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-btn {
+    padding: var(--padding) var(--padding);
+    background-color: var(--nav-bg-colour);
+    font-size: var(--small-font);
+    color: var(--white);
+    border: var(--border-size) solid var(--colourless-borders);
+    border-radius: 5px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-btn:hover {
+    padding: var(--padding) var(--padding);
+    background-color: var(--nav-btn-hover);
+    font-size: var(--small-font);
+    color: var(--white);
+    border: var(--border-size) solid var(--nav-btn-hover-border);
+    border-radius: 5px;
+}
+
+.nav-btn:active {
+    padding: var(--padding) var(--padding);
+    background-color: var(--nav-bg-colour);
+    font-size: var(--small-font);
+    color: var(--white);
+    border: var(--border-size);
+    border-radius: 5px;
+}
+
+.theme-toggle {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    display: inline-block;
+}
+
+.theme-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--nav-btn-hover);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--white);
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: var(--vertical-bar);
+}
+
+input:checked+.slider::before {
+    transform: translateX(24px);
 }
 
 body {
-  margin: 0;
-  font-family: serif;
-  background: var(--color-bg);
-  color: var(--color-fg);
-  transition: 0.5s;
+    transition: background 0.5s, color 0.5s;
+    background-image: var(--background);
+    margin: 0;
+    height: 100%;
 }
 
-/* NAVBAR */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  border-bottom: 2px solid var(--nav-border);
+.heading {
+    /* padding-top: 8px; */
+    font-family: var(--main_thing_font);
+    color: var(--white);
+    font-size: var(--main_thing_size);
+    opacity: 0.8;
 }
 
-.nav h1 {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: var(--color-accent);
-  margin: 0;
+.heading p{
+    margin-bottom: 0;
 }
 
-.nav nav {
-  display: flex;
-  gap: 25px;
-  align-items: center;
+.container {
+    display: flex;
+    justify-content: center;
 }
 
-.nav nav a {
-  color: var(--color-fg);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+.main_content {
+    display: grid;
+    grid-template-columns: 100px 500px;
+    gap: 1px;
 }
 
-.nav nav a:hover {
-  color: var(--color-accent);
+.main_content p {
+    color: var(--white);
+    font-size: var(--large-font);
+    font-family: var(--main_thing_font);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 1px;
 }
 
-.nav button {
-  background: transparent;
-  border: 1px solid var(--color-accent);
-  color: var(--color-accent);
-  padding: 8px 16px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease, color 0.3s ease;
+#name {
+    background-color: var(--name-color);
+    color: var(--white);
+    font-size: var(--large-font);
+    font-family: var(--main_thing_font);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 1px;
 }
 
-.nav button:hover {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
-  border-color: var(--color-accent);
+#email {
+    background-color: var(--name-color);
+    color: var(--white);
+    font-size: var(--large-font);
+    font-family: var(--main_thing_font);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 1px;
 }
 
-main {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-lg);
+#message {
+    background-color: var(--name-color);
+    color: var(--white);
+    font-size: var(--large-font);
+    font-family: var(--main_thing_font);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  width: 100%;
-  max-width: 400px;
+#submit {
+    border-radius: 10px;
+    background-color: var(--name-color);
+    color: var(--white);
+    font-size: var(--large-font);
+    font-family: var(--main_thing_font);
+    margin-left: 20px;
 }
 
-input,textarea {
-  padding: 12px;
-  border: 1px solid var(--color-accent-soft);
-  background: var(--color-card);
-  color: var(--color-fg);
-  border-radius: 6px;
-  transition: border-color 0.3s ease, background 0.3s ease;
-  font-size: 1rem;
+#status {
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: var(--small-font);
 }
 
-input:focus,textarea:focus {
-  border-color: var(--color-accent);
-  outline: none;
+footer {
+    border-top: var(--border-size) solid var(--white);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--nav-bg-colour);
+    padding: 20px;
 }
 
-textarea {
-  min-height: 120px;
-  resize: vertical;
+footer a {
+    color: var(--white);
+    padding: 10px;
+    text-decoration: none;
 }
 
-#name{
-  margin: 2px;
-  padding: 10px;
-}
-
-#email{
-  margin: 2px;
-  padding: 10px;
-}
-
-#msg{
-  margin: 2px;
-  padding: 10px;
-}
-
-.send {
-  margin: 2px;
-  padding: 10px;
-  background: var(--color-accent);
-  color: var(--color-bg);
-  transition: background 0.3s ease;
-  border-radius: 5px;
-}
-
-.send:hover {
-  background: var(--color-accent-soft);
-  color: var(--color-fg);
-}
-
-#form {
-  padding: 130px;
-}
-
-hr {
-  width: 300px;
-  height: 1px;
-  border: none;
-  margin: 0;
-  background: linear-gradient(to right,var(--color-fg), var(--color-bg));
-}
-
-.contact{
-  font-size: 1.5rem;
-  color: var(--color-accent);
-  margin:20px;
-  font-size: 1.5rem;
-  color: var(--color-accent);
-  margin:20px;
+footer a:hover {
+    color: var(--hover);
+    padding: 10px;
 }
